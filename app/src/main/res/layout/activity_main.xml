@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:text="scrollController"
+        android:gravity="center_horizontal"
+        />
+    <seemann.scrollcontroller.view.MyScrollview
+        android:id="@+id/scrollView"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:scrollbars="none">
+        <seemann.scrollcontroller.view.MoveLayout
+            android:id="@+id/moveLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </seemann.scrollcontroller.view.MyScrollview>
+</LinearLayout>

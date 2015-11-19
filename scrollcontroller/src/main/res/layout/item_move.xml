@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <!--   <com.xmz.activity.ImageViewBorder
+          android:id="@+id/movie_image"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          xmz:BorderColor="GRAY"
+      /> -->
+    <TextView
+        android:id="@+id/move_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="10dp"
+        />
+</LinearLayout>
