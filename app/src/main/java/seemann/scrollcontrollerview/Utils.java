@@ -1,5 +1,6 @@
 package seemann.scrollcontrollerview;
 
+import android.util.DisplayMetrics;
 import android.util.Log;
 
 import java.text.SimpleDateFormat;
@@ -67,5 +68,4 @@ public class Utils {
         }
         return dayList;
     }
-
 }

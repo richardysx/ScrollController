@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.DisplayMetrics;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
@@ -36,11 +37,10 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        dur = (int) dp2px(this.getResources(), 72);
+        dur =  getWidth()/5;
         scrollView = (MyScrollview) findViewById(R.id.scrollView);
         movieLayout = (MoveLayout) findViewById(R.id.moveLayout);
-        adapter = new MoveAdapter(this);
-
+        adapter = new MoveAdapter(this,15,"#6223e3");
 
         /************set week of 2015 in adapter**************/
         Calendar c_begin = new GregorianCalendar();
@@ -120,5 +120,11 @@ public class MainActivity extends Activity {
     private float dp2px(Resources resources, float dp) {
         final float scale = resources.getDisplayMetrics().density;
         return dp * scale + 0.5f;
+    }
+    private  int getWidth() {
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int width = dm.widthPixels;
+        return width;
     }
 }

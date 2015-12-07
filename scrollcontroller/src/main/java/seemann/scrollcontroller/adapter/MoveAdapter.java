@@ -1,6 +1,7 @@
 package seemann.scrollcontroller.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,19 +20,25 @@ import seemann.scrollcontroller.R;
  */
 public class MoveAdapter extends BaseAdapter {
 
-    private List<Map<String,Object>> list;
+    private List<Map<String, Object>> list;
     private Context context;
-    public MoveAdapter(Context context){
-        this.context=context;
-        this.list=new ArrayList<Map<String,Object>>();
+    private int textSize = 10;
+    private String textColor = "#fff";
+
+    public MoveAdapter(Context context, int size, String color) {
+        this.context = context;
+        this.list = new ArrayList<Map<String, Object>>();
+        this.textSize = size;
+        this.textColor = color;
     }
+
     @Override
     public int getCount() {
         return list.size();
     }
 
     @Override
-    public Map<String,Object> getItem(int location) {
+    public Map<String, Object> getItem(int location) {
         return list.get(location);
     }
 
@@ -40,19 +47,22 @@ public class MoveAdapter extends BaseAdapter {
         return arg0;
     }
 
-    public void clear(){
+    public void clear() {
         list.clear();
     }
-    public void addObject(Map<String,Object> map){
+
+    public void addObject(Map<String, Object> map) {
         list.add(map);
         notifyDataSetChanged();
     }
+
     @Override
     public View getView(int location, View arg1, ViewGroup arg2) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_move,null);
-        TextView text=(TextView)view.findViewById(R.id.move_text);
-        text.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 10);
-        Map<String,Object> map=getItem(location);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_move, null);
+        TextView text = (TextView) view.findViewById(R.id.move_text);
+        text.setTextSize(TypedValue.COMPLEX_UNIT_DIP, textSize);
+        text.setTextColor(Color.parseColor(textColor));
+        Map<String, Object> map = getItem(location);
         text.setText(map.get("text").toString());
         return view;
     }

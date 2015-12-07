@@ -45,4 +45,7 @@ public class MoveLayout extends LinearLayout {
             this.addView(view,new LinearLayout.LayoutParams((int)dp2px(context.getResources(),72),LayoutParams.WRAP_CONTENT));
         }
     }
+    public void clear(){
+        this.removeAllViews();
+    }
 }
